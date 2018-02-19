@@ -1,40 +1,32 @@
 import React, { Component } from 'react';
+import PlayerBattingLine from './PlayerBattingLine';
 import 'bootstrap/dist/css/bootstrap.css'
 
 class BattingSection extends Component {
+
   render() {
     return (
         <div class='container'>
-          <div class='row'>
-            <div class='col=sm'>
-              <p>Batting</p>
-            </div>
-            <div class='col-sm'>
-              <p>AB</p>
-            </div>
-            <div class='col-sm'>
-              <p>R</p>
-            </div>
-            <div class='col=sm'>
-              <p>H</p>
-            </div>
-            <div class='col-sm'>
-              <p>RBI</p>
-            </div>
-            <div class='col-sm'>
-              <p>BB</p>
-            </div>
-            <div class='col-sm'>
-              <p>SO</p>
-            </div>
-            <div class='col-sm'>
-              <p>PO</p>
-            </div>
-            <div class='col-sm'>
-              <p>A</p>
-            </div>
-          </div>
-        </div>      
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Batting</th>
+                <th>AB</th>
+                <th>R</th>
+                <th>H</th>
+                <th>RBI</th>
+                <th>BB</th>
+                <th>SO</th>
+                <th>PO</th>
+                <th>A</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.props.batting.map((line, index) =>
+                <PlayerBattingLine line={line} />)}
+            </tbody>
+          </table>
+        </div>
       );
   }
 }
