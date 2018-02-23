@@ -6,7 +6,7 @@ class PlayerBattingLine extends Component {
   render () {
     return (
         <tr>
-          <td>{this.props.line.name}</td>
+          <td>{this.props.line.name} - {this.props.line.position}</td>
           <td>{this.props.line.ab}</td>
           <td>{this.props.line.r}</td>
           <td>{this.props.line.h}</td>
